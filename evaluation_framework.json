@@ -1,0 +1,41 @@
+{
+    "relevance": {
+      "Target Domain and Industry": "Identify the specific sector and industry for the sustainability idea.",
+      "Beneficiaries": "Determine who will benefit from the sustainability idea.",
+      "Alignment with Global Sustainability Goals": "Check if the idea aligns with international sustainability priorities.",
+      "Recent Policy Updates": "Review the latest changes in regulations related to the domain in a specific country.",
+      "Reports and News on Local Needs": "Analyze recent trusted reports and news to understand the local needs in the context of the startup's operation.",
+      "Historical Context": "Consider historical, legislative, and political factors that might influence the business idea.",
+      "Current Practices": "Examine existing practices in the idea's domain.",
+      "Stakeholder Tensions/Trade-offs": "Identify potential conflicts or compromises among different stakeholders."
+    },
+    "fit": {
+      "Alignment with Existing Interventions": "Assess how the idea fits with or differs from other initiatives in the same domain.",
+      "Examples of Business Model Innovation": "Look for successful implementations of similar ideas.",
+      "Analysis of Past Failures": "Study previous failures in the domain for insights.",
+      "Barriers to Circular Goals Integration": "Identify potential obstacles.",
+      "News Trends and Market Relevance": "Evaluate current news trends and their relevance to the business objectives."
+    },
+    "effectiveness": {
+      "Expected Outcomes": "Define the expected results and objectives.",
+      "Innovation and Novelty": "Assess the level of innovation in the idea.",
+      "Business Risk Factors": "Identify risks associated with the domain.",
+      "Needed Innovations": "Determine the technical and social innovations required.",
+      "Policy and Educational Needs": "Identify necessary policy measures and educational activities."
+    },
+    "impact": {
+      "Change in Customers' Lives": "Evaluate the impact on the target customers."
+    },
+    "sustainability": {
+      "Opportunities and Benefits": "Explore the benefits of implementing circular goals.",
+      "Support Systems and Capacities": "Determine what systems and capacities need strengthening.",
+      "Sustainability Risks": "Identify risks associated with the business's sustainability."
+    },
+    "phase_analysis": {
+      "materials_phase": "Address aspects like resource use reduction, recycling, and economic benefits.",
+      "product_design_phase": "Focus on material selection, design for recyclability, and cost implications.",
+      "production_and_distribution_phase": "Examine resource efficiency, business models, and consumer practices.",
+      "use_phase": "Look at user behavior, product longevity, and service-oriented models.",
+      "end_of_life_phase": "Consider product management post-use, incentives for circular behavior, and sustainable product-service systems."
+    }
+  }  
