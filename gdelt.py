@@ -20,7 +20,7 @@ def get_gdelt_news(keywords, country):
 
     # Dates for the past three months
     end_date = datetime.utcnow()
-    start_date = end_date - timedelta(days=60)
+    start_date = end_date - timedelta(days=90)
     start_date_str = start_date.strftime('%Y-%m-%d')
     end_date_str = end_date.strftime('%Y-%m-%d')
 
@@ -53,15 +53,13 @@ def get_gdelt_news(keywords, country):
     #Search for articles matching the filters
     articles = safe_article_search(filters)
     top_articles = get_top_article_urls(articles)
-
-    print(top_articles)
     
     #Get a timeline of the number of articles matching the filters
     try:
         timelinetone = safe_timeline_search(filters)
         print(timelinetone)
         # Check if the timeline data is in the expected format
-        if "timeline" in timelinetone and len(timelinetone["timeline"]) > 0 and "data" in timelinetone["timeline"][0]:
+        if timelinetone is not None and "timeline" in timelinetone and len(timelinetone["timeline"]) > 0 and "data" in timelinetone["timeline"][0]:
             # Separate and sum negative and positive values
             sum_negative = timelinetone[timelinetone['Average Tone'] < 0]['Average Tone'].sum()
             sum_positive = timelinetone[timelinetone['Average Tone'] > 0]['Average Tone'].sum()

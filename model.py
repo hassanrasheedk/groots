@@ -96,9 +96,16 @@ def evaluate():
     print(negative_score)
     print(positive_score)
     
-    response = chat_with_gpt(prompt, model, country, business_phase)
+    gpt_response = chat_with_gpt(prompt, model, country, business_phase)
 
-    return jsonify(response['choices'][0]['message']['content'])
+    reponse = {
+        "llm_response": gpt_response['choices'][0]['message']['content'],
+        "top_articles": top_articles,
+        "negative_score": negative_score,
+        "positive_score": positive_score
+    }
+
+    return jsonify(reponse)
 
 if __name__ == '__main__':
     app.run(debug=True)
