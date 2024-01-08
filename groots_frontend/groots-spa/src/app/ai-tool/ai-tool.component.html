@@ -1,0 +1,85 @@
+<div class="ai-tool-container" *ngIf="!isPromptSubmitted">
+    <aside class="prompts-list">
+        <ul>
+            <li *ngFor="let prompt of prompts">{{prompt}}</li>
+        </ul>
+    </aside>
+    <section class="prompt-input-section">
+        <div class="country-selector">
+            <ng-select [items]="countries" bindLabel="name" bindValue="id"
+                [placeholder]="selectedCountry !== null ? '' : 'Select Country'" [multiple]="false"
+                [(ngModel)]="selectedCountry" (change)="onCountryChange($event)">
+            </ng-select>
+        </div>
+        <div class="chat-interface">
+            <div class="loader-container" *ngIf="isLoading">
+            </div>
+            <input type="text" [(ngModel)]="inputPrompt" placeholder="Input your idea here.">
+        </div>
+        <button class="submit-btn" [disabled]="selectedCountry === null || !inputPrompt.trim()"
+            (click)="submitPrompt($event)">
+            <i class="material-icons">arrow_upward</i>
+        </button>
+    </section>
+</div>
+
+<div class="landing-container" *ngIf="isPromptSubmitted && !isContinuePressed">
+    <section class="continue-page">
+        <h2>Before giving out the analysis, we would like to ask you two more questions to better understand the context
+            of your question, and provide a more tailored evaluation.</h2>
+        <button class="btn-primary" (click)="onContinue()">Continue</button>
+    </section>
+</div>
+
+<div class="landing-container" *ngIf="isPromptSubmitted && isContinuePressed && !isBusinessModelSelected">
+    <section class="circular-business-model">
+        <h1>Choose Your Circular Business Model:</h1>
+        <div class="model-grid">
+            <div class="model-block" (click)="selectBusinessModel('Start-ups')">
+                <h1>Start-ups</h1>
+                <p>a new organization with a circular business model</p>
+            </div>
+            <div class="model-block" (click)="selectBusinessModel('Business Model Transformation')">
+                <h1>Business Model Transformation</h1>
+                <p>The current business model is to be changed, resulting in a circular business model</p>
+            </div>
+            <div class="model-block" (click)="selectBusinessModel('Business Model Diversification')">
+                <h1>Business Model Diversification</h1>
+                <p>Without major changes in existing non-circular business models of an organization, an additional
+                    circular business model is established</p>
+            </div>
+            <div class="model-block" (click)="selectBusinessModel('Circular Business Model Acquisition')">
+                <h1>Circular Model Business Model Acquisition</h1>
+                <p>An additional circular business model is identified, acquired and integrated into the organization
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="landing-container" *ngIf="isPromptSubmitted && isContinuePressed && isBusinessModelSelected">
+    <section class="hero" *ngIf="!isBusinessPhaseSelected">
+        <h1>Which Phase is the Idea in?</h1>
+        <p>Select the phase you’re in. Help us to provide you with more specific ideas regarding <strong>future
+                directions!</strong></p>
+        <div class="phases-grid">
+            <div *ngFor="let phase of business_phases" class="phase-block" (click)="selectBusinessPhase(phase)">
+                {{ phase.name }}
+            </div>
+        </div>
+    </section>
+
+    <div *ngIf="isLoading && isBusinessPhaseSelected" class="loader-container">
+        <!-- Include your loader animation here -->
+
+        <div class="loader"></div>
+
+    </div>
+    <!-- Results Section -->
+    <div *ngIf="!isLoading && response" class="results-section">
+        <h2>Idea Evaluation</h2>
+        <p *ngFor="let line of parsedResponse">{{ line }}</p>
+    </div>
+
+
+</div>

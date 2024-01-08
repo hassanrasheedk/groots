@@ -1,0 +1,42 @@
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.character {
+    flex-basis: 45%;
+    max-width: 45%;
+    box-sizing: border-box;
+    /* position: relative; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* height: 400px; */
+}
+
+.plant {
+    position: absolute;
+    width: 30%;
+}
+
+.plant-left img {
+    transform: translateY(35%);
+}
+
+.plant-right img {
+    top: 10%;
+    transform: translateX(55%);
+}
+
+.astrobot {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.astrobot img,
+.plant img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

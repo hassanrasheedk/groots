@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 import json
 from gdelt import get_gdelt_news
@@ -24,9 +25,13 @@ def extract_keywords(sentence):
     tagged_words = pos_tag(filtered_words)
     keywords = [word for word, tag in tagged_words if tag.startswith(('NN'))]  # Nouns, Verbs, Adjectives, Adverbs
 
-    return keywords
+    #choose first 5 keywords
+    combined_keywords = ' '.join(keywords[:4])
+
+    return combined_keywords
 
 app = Flask(__name__)
+CORS(app)
 
 def chat_with_gpt(prompt, model, country, business_phase):
     # Read the API key from config.json
@@ -90,11 +95,8 @@ def evaluate():
         model = 'gpt-3.5-turbo'
 
     keywords = extract_keywords(prompt)
-    top_articles, negative_score, positive_score = get_gdelt_news(keywords, country)
 
-    print(top_articles)
-    print(negative_score)
-    print(positive_score)
+    top_articles, negative_score, positive_score = get_gdelt_news(keywords, country)
     
     gpt_response = chat_with_gpt(prompt, model, country, business_phase)
 

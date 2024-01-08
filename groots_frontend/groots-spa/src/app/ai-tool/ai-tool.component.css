@@ -1,0 +1,301 @@
+.ai-tool-container {
+    display: flex;
+    height: 100vh;
+    /* Use the full viewport height */
+}
+
+.prompts-list {
+    width: 20%;
+    background: black;
+    color: #fff;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+}
+
+.prompts-list ul {
+    list-style: none;
+    display: flex;
+}
+
+.prompts-list li {
+    font: 'Montserrat' 20px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.prompt-input-section {
+    width: 80%;
+    background: #1E1E1E;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Space between the country selector and chat interface */
+    align-items: center;
+}
+
+.country-selector {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding: 20px;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    color: #fff;
+    background: #1E1E1E;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.ng-select {
+    width: 100%;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Opaque background */
+    border-bottom: 1px solid #fff;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option:last-child {
+    border-bottom: none;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container,
+.ng-select.ng-select-opened>.ng-select-container {
+    border-color: #fff;
+    box-shadow: none;
+}
+
+
+.chat-interface {
+    background: #1E1E1E;
+    position: relative;
+}
+
+/* Style for the chat input box similar to the ChatGPT interface */
+.chat-interface input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-interface {
+    background: #1E1E1E;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    max-height: 20%;
+    /* Limit the height to 20% of the container */
+    width: 90%;
+}
+
+.chat-interface .chat-input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.chat-interface .chat-input::placeholder {
+    color: grey;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #25CCDD 0%, #7BE08F 40%, #DAF63E 70%, #1E1E1E 100%);
+    /* Replace with your primary color */
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    bottom: 0;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.submit-btn:disabled {
+    background: grey;
+}
+
+.prompt-input-section {
+    position: relative;
+}
+
+.loader-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5%;
+    background: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prompt-input-section button {
+    max-height: 100%;
+    overflow: hidden;
+}
+
+/* Ensure the input and button are not out of view */
+.chat-interface input {
+    max-height: 100%;
+    overflow: hidden;
+}
+
+/* Hide loader by default */
+.loader-container {
+    display: none;
+}
+
+/* Show loader when isLoading is true */
+.loader-container.is-loading {
+    display: flex;
+}
+
+.continue-page {
+    text-align: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.continue-page h2 {
+    margin-bottom: 1rem;
+    font-style: 'Montserrat';
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.circular-business-model {
+    text-align: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.circular-business-model h1 {
+    margin-bottom: 1rem;
+    font-style: 'Montserrat';
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between blocks */
+  }
+  
+  .model-block {
+    font: 'Montserrat';
+    font-size: 30px;
+    font-weight: 400;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* Add more styles like font, box-shadow, etc., as per your design */
+  }
+
+  .model-block h1{
+    color: black;
+    /* Add more styles like font, box-shadow, etc., as per your design */
+  }
+  
+  .model-block:hover {
+    /* Optional: Style for hover effect */
+    background-color: #f0f0f0; /* Light grey background on hover */
+  }
+
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between blocks */
+    max-width: 60%; /* Adjust as needed */
+    margin: auto; /* Center the grid in the section */
+  }
+  
+  .phase-block {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Additional styling as needed */
+  }
+  
+  .phase-block:hover {
+    background-color: #f0f0f0;
+  }
+
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .loader {
+    border: 5px solid #f3f3f3; /* Light grey border */
+    border-top: 5px solid #3498db; /* Blue border */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  
+  .results-section {
+  /* ... styles ... */
+}
+
+.pros-cons-section, .improvements-section, .references-section {
+  margin-bottom: 20px;
+}
+
+.references-section button {
+  /* Style the toggle button */
+}
