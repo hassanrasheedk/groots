@@ -1,0 +1,88 @@
+[
+    {
+        "phase": "Material",
+        "questions": [
+            "How can the proposal contribute to reducing resource use and waste in the production of raw materials?. Provide detailed insights into how the proposal actively reduces resource consumption and minimizes waste in the raw materials production phase",
+            "Does the proposal involve technical innovation to optimize production processes and reduce waste? Assess the level of technical innovation proposed to optimize production processes and minimize waste generation.",
+            "How does the proposal integrate the recycling of waste materials in the material production process? Examine the proposal's approach to integrating the recycling of waste materials into the material production process.",
+            "Is the proposal aligned with the existing value creation, value proposition, and value capture strategies in the raw materials phase?  Evaluate the alignment of the proposal with existing strategies in the raw materials sector, considering value creation, proposition, and capture.",
+            "How feasible is the proposal in terms of implementation and potential practical hurdles? Assess the feasibility of implementing the proposal, considering practical hurdles that may arise during execution.",
+            "What are the potential environmental benefits of implementing the proposed circular goals in the business model? Determine and quantify the potential environmental benefits resulting from the adoption of circular goals in the proposed business model.",
+            "How can the proposal create awareness and provide education to companies about the benefits of reducing resource use and waste? Examine the strategies outlined in the proposal for creating awareness and educating companies on the advantages of reducing resource use and waste.",
+            "Does the proposal consider the integration of recycled materials in the production process? Evaluate how well the proposal considers and integrates recycled materials into the production process.",
+            "How does the proposal align with existing practices in the metal production value chains for recycling post-consumer scrap metal? Assess the alignment of the proposal with existing practices in metal production value chains, especially regarding the recycling of post-consumer scrap metal.",
+            "How does the proposal address the challenge of maintaining quality standards when using recycled materials in the production process? Examine the measures proposed in the proposal to address the challenge of maintaining quality standards when using recycled materials in production.",
+            "Are there policy measures or incentives suggested to encourage companies to adopt circular goals in their business models? Evaluate whether the proposal suggests policy measures or incentives to encourage other companies to adopt circular goals in their business models.",
+            "Are there plans to establish partnerships with waste collection and sorting companies to ensure a consistent and sufficient supply of accurately sorted waste materials? Assess the existence and viability of plans outlined in the proposal to establish partnerships with waste collection and sorting companies for a consistent supply of accurately sorted waste materials."
+        ]
+    },
+    {
+        "phase": "Production Design",
+        "questions": [
+            "How are the materials for the product selected? Evaluate the criteria and processes for material selection.",
+            "Are the chosen materials easily repairable or recyclable? Assess the repairability and recyclability of selected materials.",
+            "How are different materials combined and joined together in the product? Examine the methods used for combining materials in the product.",
+            "Can the materials be separated for disassembly and recycling? Assess the ease of disassembly and recyclability of materials.",
+            "Are hazardous substances phased out in the design? Check for measures taken to eliminate hazardous substances in the design.",
+            "What design strategies are implemented to slow or close resource loops? Examine strategies to slow down or close resource loops in the design.",
+            "Is the product designed for ease of maintenance and repair? Assess the design's consideration for ease of maintenance and repair.",
+            "Does the design allow for upgradability and adaptability? Evaluate the design's flexibility for upgrades and adaptations.",
+            "Does the design consider a technological cycle or a biological cycle? Assess whether the design aligns with technological or biological cycles.",
+            "Are there technical solutions in place to support circular design principles? Examine the presence of technical solutions supporting circular design.",
+            "Does the design require the use of high-quality materials for durability? Assess the necessity for high-quality materials in the design for durability.",
+            "How does the design impact the lifetime of the product? Examine the impact of design on the product's lifetime.",
+            "Are there higher production costs associated with the design? Evaluate the potential increase in production costs due to the design.",
+            "Are market and user requirements considered in the design decisions? Assess consideration of market and user requirements in design decisions."
+        ]
+    },
+    {
+        "phase": "Production and Distribution",
+        "question": [
+            "How does the proposal aim to increase resource efficiency in the production and distribution phase? Examine strategies for resource efficiency in production and distribution.",
+            "Does the proposal incorporate digitization or additive manufacturing techniques to reduce resource use? Assess the integration of digital and additive manufacturing technologies.",
+            "How does the proposal plan to integrate the use of remanufactured parts or components in the production process? Examine plans for integrating remanufactured parts or components in production.",
+            "What strategies does the proposal suggest for reducing resources needed for packaging or using recycled materials instead? Assess proposed strategies for reducing packaging resources and using recycled materials.",
+            "How does the proposal address the potential impact on production waste and transport costs? Examine the proposal's approach to mitigating production waste and transport costs.",
+            "Does the proposal consider the optimization of product design to minimize waste and transportation weight/volume? Assess considerations for optimizing product design to reduce waste and transportation weight/volume.",
+            "What innovative business models and social practices does the proposal propose to support the adoption of circular practices? Examine proposed business models and social practices supporting circular practices.",
+            "How does the proposal plan to encourage consumers to adopt practices such as repairing and looking for spare parts instead of buying new devices? Assess strategies for encouraging consumer adoption of repairing and spare parts usage.",
+            "What policies does the proposal suggest to ensure access to technical information and spare parts for producers? Examine proposed policies to ensure producer access to technical information and spare parts.",
+            "How does the proposal address the factors necessary for increasing the use of remanufactured parts in production processes? Assess how the proposal addresses factors for increasing the use of remanufactured parts.",
+            "Does the proposal consider the value of the product and its parts, the capture of added value, and customer acceptance of remanufactured goods? Evaluate consideration of product value, added value capture, and customer acceptance of remanufactured goods.",
+            "Does the proposal consider the importance of product standards and independent quality labels to increase consumer trust in remanufactured products? Assess consideration of product standards and quality labels for building consumer trust in remanufactured products.",
+            "Does the proposal suggest collaborative approaches and partnerships to lower logistics costs and mainstream behavior in favor of circular products? Examine suggestions for collaborative approaches and partnerships to reduce logistics costs and promote circular products."
+        ]
+    },
+    {
+        "phase": "Use",
+        "question": [
+            "How does the proposed business model encourage circularity in the use phase? Examine business model features promoting circular practices in the use phase.",
+            "What role does the user play in determining the management of products during and at the end of the use phase? Evaluate user involvement in product management during and after the use phase.",
+            "Does the business model promote reuse and recycling solutions for products? Assess the business model's promotion of reuse and recycling solutions.",
+            "How does the business model address the repair and maintenance of products? Examine how the business model addresses repair and maintenance of products.",
+            "How does the business model address the culture of single-use consumption? Assess strategies for addressing the culture of single-use consumption.",
+            "Does the proposed idea align with the increasing awareness of the value of products and the importance of reuse and repair? Evaluate alignment with increasing awareness of product value and the significance of reuse and repair.",
+            "How does the business model ensure availability of repair skills and repair parts at reasonable prices? Examine measures ensuring the availability of repair skills and parts at reasonable prices.",
+            "Does the proposed idea focus on the function or performance of products rather than the ownership of the product itself? Assess the focus on product function or performance over ownership.",
+            "How does the business model provide access to services that meet customer needs without the necessity of owning the product? Examine how the business model provides access to services without requiring ownership.",
+            "How does the business model reduce the production of new products and increase the intensity of product use through shared use and reuse? Assess strategies for reducing new product production and increasing intensity of product use through sharing and reuse.",
+        ]
+    },
+    {
+        "phase": "End-of-life",
+        "question": [
+            "How does the proposed idea encourage users to manage products in a circular manner during and at the end of the use phase? Examine strategies for encouraging circular product management during and after the use phase.",
+            "What incentives or strategies does the proposal have to increase user behavior towards reuse, repair, and responsible product management? Evaluate incentives and strategies for influencing user behavior towards reuse, repair, and responsible product management.",
+            "Does the proposal consider the existence of privately-owned second-hand shops and their potential impact on reuse in regular business models? Assess consideration of privately-owned second-hand shops and their potential impact on reuse in business models.",
+            "Does the proposal consider the market for reuse in specific industries, such as cars, and how it can be integrated into the business model? Examine consideration of the reuse market in specific industries and its integration into the business model.",
+            "How does the proposal address the culture of single-use consumption and the increasing buying power of consumers? Assess strategies for addressing single-use consumption culture and the growing buying power of consumers.",
+            "How does the proposal focus on the function or performance of products instead of the product itself? Evaluate emphasis on product function or performance over the product itself.",
+            "Does the proposal incorporate access-based business models or product-service systems to decouple revenue generation from material and product consumption and waste? Examine the incorporation of access-based business models or product-service systems for decoupling revenue from consumption and waste.",
+            "How does the proposal ensure that customers' needs can be fulfilled with a smaller number of products through renting, sharing, or leasing? Assess measures for fulfilling customer needs with fewer products through renting, sharing, or leasing.",
+            "Does the proposal incentivize producers to increase product lifetime through design choices that enable reuse, repair, remanufacture, and recycling? Examine incentives for producers to increase product lifetime through design choices enabling circular practices.",
+            "How does the proposal plan to communicate with users to limit impacts during the use phase and provide guidance on the best use of the product in terms of durability? Assess communication strategies for guiding users on the best use of the product in terms of durability.",
+            "Does the proposal consider sustainability assessment frameworks for product-service systems to guide further sustainability improvements? Examine consideration of sustainability assessment frameworks for guiding additional sustainability improvements.",
+            "How does the proposal incorporate policy measures and technical innovation to create the right incentives and tools for designing and implementing product-service system models that contribute to circularity? Assess incorporation of policy measures and technical innovation for creating incentives and tools supporting circular product-service system models."
+        ]
+    }
+]

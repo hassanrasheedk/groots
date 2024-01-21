@@ -1,5 +1,5 @@
-# groots
-An AI assistant that evaluates ideas and provides evaluations based on provided criteria, we have a preset of criteria framework and also allow user to input their own criteria if they wish to, we also take the initial user prompt and create better engineered prompts based on SOTA techniques.
+# groots - Sustainable LLM
+An AI assistant that evaluates ideas and provides evaluations based on provided criteria, uses preset criteria framework and also allows user to input their own criteria if they need to evaluate on something specific, also takes the initial user prompt and creates better engineered prompts based on state-of-the-art techniques.
 
 Created by Zoey Yan, Konstantina Yaneva, and Hassan Rasheed
 
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ng-serve
 ```
 
-##Start Backend
+## Start Backend
 ```
 python model.py
 ```

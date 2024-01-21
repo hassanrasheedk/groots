@@ -1,0 +1,13 @@
+{
+    "prompts": [
+        "{domain} = Determine the target domain and industry for the sustainability idea. Output in this format: Domain/ Industry = {domain}",
+        "Determine how the idea can improve or enhance other products. In what ways can the idea be integrated into existing products to make them more sustainable or efficient? Output in bullet points.",
+        "Analyze the changes in similar products over time. How have similar products evolved and improved over the years? What lessons can be learned from their development? Output in bullet points.",
+        "Are there any tensions or trade-offs in meeting the needs and priorities of different stakeholders in the context/ domain of the idea? Output in bullet points.",
+        "Investigate the effectiveness of the idea: What are the business risk factors associated with the domain? What technical and social innovation is needed to support the business idea? Which policy measures and educational activities are needed to enable new business models to become successful and scale up? Respond in bullet points.",
+        "Identify potential collaborations or partnerships with other businesses or organizations in the same domain. Identify potential partners. Explain how their expertise or resources can enhance the idea.",
+        "Assess whether and how the idea aligns or contributes to global sustainability goals and priorities. Output in a table with bullet points. Reference the Sustainable Development Goals (SDGs) from Our World in Data.",
+        "Identify the opportunities and benefits that can be gained from the idea. Determine how incorporating circular goals can help with these opportunities and benefits. Apply these findings to the business idea.",
+        "Brainstorm alternative uses for the idea. Breakdown the idea and its components. Consider how the idea can be applied in different industries or domains. Give a short explanation. Output in bullet points."
+    ]
+}
