@@ -13,12 +13,14 @@ Python
 Angular
 ```
 
-## Backend Installation
-1. Go to groots-frontend directory
+## Frontend Installation
+Go to groots-frontend directory
 ```
 npm install
 ```
-3. Go to project directory
+
+## Backend Installation
+Go to project directory
 ```
 pip install -r requirements.txt
 ```
@@ -28,7 +30,7 @@ pip install -r requirements.txt
 ng-serve
 ```
 
-## Start Backend
+## Starting Backend
 ```
 python model.py
 ```
