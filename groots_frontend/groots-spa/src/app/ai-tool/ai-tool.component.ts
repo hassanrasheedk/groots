@@ -24,7 +24,7 @@ export class AiToolComponent {
   isBusinessPhaseSelected: boolean = false;
   response: any;
   parsedResponse: string[] = [];
-  showReferences = false; // For toggling references
+  showReferences = false;
   
   inputPrompt: string = "";
   business_model: string | null = null;
@@ -46,15 +46,27 @@ export class AiToolComponent {
     { id: 4, name: 'Use', key_val: "use_phase" },
   ];
 
+  /**
+   * Handles the response from the server.
+   * @param response The response from the server.
+   */
   handleResponse(response: any): void {
     this.response = response;
     this.parseLlmResponse(response.llm_response);
   }
 
+  /**
+   * Parses the response from the language model.
+   * @param llmResponse The response from the language model.
+   */
   parseLlmResponse(llmResponse: string): void {
     this.parsedResponse = llmResponse.split('\n').filter(line => line.trim());
   }
 
+
+   /**
+   * Toggles the visibility of the references section.
+   */
   toggleReferences(): void {
     this.showReferences = !this.showReferences;
   }
@@ -64,25 +76,44 @@ export class AiToolComponent {
     this.isBusinessModelSelected = true;
   }
 
+  /**
+   * Selects the business phase.
+   * @param phase The selected business phase.
+   */
   selectBusinessPhase(phase: any): void {
     this.business_phase = phase.key_val;
     this.isBusinessPhaseSelected = true;
     this.sendPrompt();
   }
 
+  /**
+   * Handles the country selection change.
+   * @param event The selection change event.
+   */
   onCountryChange(event: any): void {
     console.log(this.countries[this.selectedCountry].gdelt_id);
   }
 
+  /**
+   * Submits the prompt entered by the user.
+   * @param event The submission event.
+   */
   submitPrompt(prompt: any): void {
     this.prompts.push(this.inputPrompt);
     this.isPromptSubmitted = true;
   }
 
+  /**
+   * Continues to the next step in the process.
+   */
   onContinue(): void {
     this.isContinuePressed = true;
   }
 
+  /**
+   * Creates the prompt object to send to the server.
+   * @returns The prompt object.
+   */
   createPrompt(): any {
     var promptObject = {
       prompt: this.inputPrompt,
@@ -95,19 +126,20 @@ export class AiToolComponent {
     return promptObject;
   }
 
+  /**
+   * Sends the prompt to the server.
+   */
   sendPrompt(): any {
     var promptObject = this.createPrompt();
 
     this.http.post('http://127.0.0.1:5000/evaluate', promptObject, { headers: { 'Content-Type': 'application/json' } })
       .subscribe(
         (response: any) => {
-          // Handle the response here
           this.response = response;
           this.handleResponse(this.response);
           this.isLoading = false;
         },
         (error: any) => {
-          // Handle the error here
           console.error('Error:', error);
           this.isLoading = false;
         }
