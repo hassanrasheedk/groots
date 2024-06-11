@@ -4,18 +4,30 @@ from datetime import datetime, timedelta
 from gdeltdoc import GdeltDoc, Filters
 
 def get_top_article_urls(articles_df):
-    # Check if the DataFrame is empty
+    """
+    Retrieves the top article URLs from a DataFrame of articles.
+
+    Args:
+        articles_df (DataFrame): DataFrame containing article data.
+
+    Returns:
+        List[str]: A list of the top 5 article URLs, or None if the DataFrame is empty.
+    """
     if articles_df is None or articles_df.empty:
         return None
-    
-    # Extract the 'url' column and get the top 5 URLs
-    top_urls = articles_df['url'].head(5).tolist()
+    return articles_df['url'].head(5).tolist()
 
-    return top_urls
+def get_gdelt_news(keywords: str, country: str):
+    """
+    Fetches news articles and sentiment scores from GDELT based on keywords and country.
 
-# Function to get news from the past three months based on a keyword
-def get_gdelt_news(keywords, country):
+    Args:
+        keywords (str): Keywords to search for in articles.
+        country (str): Country to filter the articles by.
 
+    Returns:
+        Tuple: A tuple containing a list of top article URLs, negative sentiment score, and positive sentiment score.
+    """
     print(keywords)
 
     # Dates for the past three months
@@ -24,13 +36,12 @@ def get_gdelt_news(keywords, country):
     start_date_str = start_date.strftime('%Y-%m-%d')
     end_date_str = end_date.strftime('%Y-%m-%d')
 
-    # Parameters for the API request
     filters = Filters(
-        keyword = keywords,
-        start_date = start_date_str,
-        end_date = end_date_str,
-        country = country
-        )
+        keyword=keywords,
+        start_date=start_date_str,
+        end_date=end_date_str,
+        country=country
+    )
 
     gd = GdeltDoc()
 
@@ -39,7 +50,6 @@ def get_gdelt_news(keywords, country):
             return gd.article_search(filters)
         except SSLError as ssl_error:
             print(f"An SSL error occurred: {ssl_error}")
-            # Handle the SSL error as needed, e.g., retry, log, or return a default value
             return None
 
     def safe_timeline_search(filters):
@@ -47,25 +57,17 @@ def get_gdelt_news(keywords, country):
             return gd.timeline_search("timelinetone", filters)
         except SSLError as ssl_error:
             print(f"An SSL error occurred: {ssl_error}")
-            # Handle the SSL error as needed, e.g., retry, log, or return a default value
             return None
 
-    #Search for articles matching the filters
     articles = safe_article_search(filters)
     top_articles = get_top_article_urls(articles)
     
-    #Get a timeline of the number of articles matching the filters
     try:
         timelinetone = safe_timeline_search(filters)
-        print(timelinetone)
-        # Check if the timeline data is in the expected format
         if timelinetone is not None and "timeline" in timelinetone and len(timelinetone["timeline"]) > 0 and "data" in timelinetone["timeline"][0]:
-            # Separate and sum negative and positive values
             sum_negative = timelinetone[timelinetone['Average Tone'] < 0]['Average Tone'].sum()
             sum_positive = timelinetone[timelinetone['Average Tone'] > 0]['Average Tone'].sum()
 
-            # Normalize the sums to a 0-10 scale
-            # For negative values, we use -100 as the min range, for positive values, we use +100
             normalized_negative = ((sum_negative - (-100 * len(timelinetone))) / (100 * len(timelinetone))) * 10
             normalized_positive = (sum_positive / (100 * len(timelinetone))) * 10
 
@@ -76,7 +78,6 @@ def get_gdelt_news(keywords, country):
         else:
             print("Timeline data is not in the expected format")
             return None, None, None
-        
     except Exception as e:
         print(f"An error occurred: {e}")
         return None, None, None

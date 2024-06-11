@@ -24,6 +24,15 @@ with open('evaluation_framework_1.json', 'r') as file:
     framework = json.load(file)
 
 def extract_keywords(sentence: str) -> str:
+    """
+    Extracts keywords from a given sentence.
+
+    Args:
+        sentence (str): The input sentence from which to extract keywords.
+
+    Returns:
+        str: A string of extracted keywords separated by spaces.
+    """
     words = word_tokenize(sentence)
     stop_words = set(stopwords.words('english'))
     filtered_words = [word for word in words if word.isalpha() and word not in stop_words]
@@ -32,6 +41,15 @@ def extract_keywords(sentence: str) -> str:
     return ' '.join(keywords[:5])
 
 def generate_framework_string(business_phase: str) -> str:
+    """
+    Generates a framework string based on the given business phase.
+
+    Args:
+        business_phase (str): The business phase for which to generate the framework string.
+
+    Returns:
+        str: A formatted string based on the framework and business phase.
+    """
     framework_string = ""
     for key, value in framework.items():
         if key != "phase_analysis":
@@ -42,6 +60,18 @@ def generate_framework_string(business_phase: str) -> str:
     return framework_string
 
 def chat_with_gpt(prompt: str, model: str, country: str, business_phase: str) -> Dict:
+    """
+    Interacts with the OpenAI GPT API using a given prompt.
+
+    Args:
+        prompt (str): The user prompt to send to GPT.
+        model (str): The GPT model to use.
+        country (str): The country context.
+        business_phase (str): The business phase context.
+
+    Returns:
+        Dict: The response from the OpenAI API.
+    """
     try:
         framework_string = generate_framework_string(business_phase)
         api_key = config['api_key']
@@ -64,6 +94,12 @@ def chat_with_gpt(prompt: str, model: str, country: str, business_phase: str) ->
 
 @app.route('/evaluate', methods=['POST'])
 def evaluate() -> Tuple:
+    """
+    Flask route to evaluate a prompt using GPT and GDELT news data.
+
+    Returns:
+        Tuple: The response JSON and HTTP status code.
+    """
     data = request.json
     prompt = data.get('prompt')
     model = data.get('model', 'gpt-3.5-turbo')
@@ -74,10 +110,8 @@ def evaluate() -> Tuple:
         return jsonify({'error': 'No prompt provided'}), 400
 
     keywords = extract_keywords(prompt)
-    # Example API call for GDELT, currently returning placeholders
     top_articles, negative_score, positive_score = get_gdelt_news(keywords, country)
-    # top_articles, negative_score, positive_score = [], 0, 1
-
+    
     gpt_response = chat_with_gpt(prompt, model, country, business_phase)
     if 'error' in gpt_response:
         return jsonify({'error': gpt_response['error']}), 500

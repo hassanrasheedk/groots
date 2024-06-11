@@ -2,3 +2,5 @@ requests
 flask
 gdeltdoc
 nltk
+pytest
+pytest-mock
