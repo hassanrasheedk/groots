@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+interface ParsedResponseItem {
+  title: string;
+  content: string;
+}
+
 @Component({
   selector: 'app-ai-tool',
   standalone: true,
@@ -23,7 +28,7 @@ export class AiToolComponent {
   isBusinessModelSelected: boolean = false;
   isBusinessPhaseSelected: boolean = false;
   response: any;
-  parsedResponse: string[] = [];
+  parsedResponse: ParsedResponseItem[] = [];
   showReferences = false;
   
   inputPrompt: string = "";
@@ -60,8 +65,17 @@ export class AiToolComponent {
    * @param llmResponse The response from the language model.
    */
   parseLlmResponse(llmResponse: string): void {
-    this.parsedResponse = llmResponse.split('\n').filter(line => line.trim());
+    const lines = llmResponse.split('\n').filter(line => line.trim());
+    this.parsedResponse = lines.map(line => {
+      if (line.includes(':')) {
+        const [title, content] = line.split(':', 2);
+        return { title: title.trim(), content: content.trim() };
+      } else {
+        return { title: '', content: line.trim() };
+      }
+    });
   }
+  
 
 
    /**

@@ -76,10 +76,21 @@
 
     </div>
     <!-- Results Section -->
-    <div *ngIf="!isLoading && response" class="results-section">
+    <!-- <div *ngIf="!isLoading && response" class="results-section">
         <h2>Idea Evaluation</h2>
         <p *ngFor="let line of parsedResponse">{{ line }}</p>
-    </div>
+    </div> -->
+
+    <div *ngIf="!isLoading && response" class="results-section">
+        <h2>Idea Evaluation</h2>
+        <div class="evaluation-cards">
+          <div *ngFor="let item of parsedResponse" class="evaluation-card">
+            <h3 *ngIf="item.title">{{ item.title }}</h3>
+            <p>{{ item.content }}</p>
+          </div>
+        </div>
+      </div>
+      
 
 
 </div>
