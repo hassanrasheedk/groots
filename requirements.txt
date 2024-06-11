@@ -1,6 +1,8 @@
+Flask
+flask-cors
 requests
-flask
-gdeltdoc
 nltk
+pydantic
 pytest
 pytest-mock
+gdeltdoc
