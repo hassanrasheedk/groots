@@ -57,7 +57,7 @@ To run this project, you will need the following software installed:
     Alternatively, you can configure the system to use an open-source model if preferred.
 
 ## Starting the Frontend
-1. Ensure you are in the `groots-frontend` directory.
+1. Ensure you are in the `groots-frontend/groots-spa` directory.
 2. Start the Angular development server:
     ```sh
     ng serve
