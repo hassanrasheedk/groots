@@ -37,7 +37,7 @@ To run this project, you will need the following software installed:
 ## Backend Setup
 1. Navigate to the project directory:
     ```sh
-    cd groots-backend
+    cd groots
     ```
 
 2. Install the required Python packages:
